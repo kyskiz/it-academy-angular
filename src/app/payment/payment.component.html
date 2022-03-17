@@ -1,0 +1,5 @@
+<div (click)="handleClick($event)">
+  <b>{{ payment.name }}</b><span>{{ payment.description }}</span>
+  <div [ngClass]="{ 'ColorGreen': payment.amount > 0, 'ColorRed': payment.amount < 0 }"
+  >{{ payment.amount }}</div>
+</div>

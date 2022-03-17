@@ -1,0 +1,22 @@
+<div class="container">
+  <h2 appHandleClick>Container component</h2>
+
+  <ng-container *ngFor="let payment of payments">
+    <app-payment *ngIf="payment.amount > 0"
+                 [payment]="payment"
+                 (onClick)="handlePaymentClick($event, payment)"></app-payment>
+  </ng-container>
+
+  <ng-container *ngFor="let payment of payments">
+    <app-payment *ngIf="payment.amount < 0"
+                 [payment]="payment"
+                 (onClick)="handlePaymentClick($event, payment)"></app-payment>
+  </ng-container>
+
+  <hr>
+
+  <app-payment *ngFor="let payment of payments | sortPayments: 'name'"
+               [payment]="payment"
+               (onClick)="handlePaymentClick($event, payment)"></app-payment>
+
+</div>
