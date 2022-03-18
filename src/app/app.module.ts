@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { BackgroundColorDirective } from './directives/background-color.directive';
 import { SortPaymentsPipe } from './pipes/sort-payments.pipe';
 import { HandleClickDirective } from './directives/handle-click.directive';
+import { PaymentsService } from './services/payments.service';
 
 @NgModule({
   imports: [
@@ -25,7 +26,7 @@ import { HandleClickDirective } from './directives/handle-click.directive';
     HandleClickDirective,
   ],
   providers: [
-
+    PaymentsService,
   ],
   bootstrap: [AppComponent]
 })

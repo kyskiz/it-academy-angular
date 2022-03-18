@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Payment } from '../types';
+import { PaymentsService } from '../services/payments.service';
 
 @Component({
   selector: 'app-container',
@@ -7,15 +8,11 @@ import { Payment } from '../types';
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent implements OnInit {
-  payments: Payment[] = [
-    { name: 'Swedbank', amount: 400, description: 'Avansas' },
-    { name: 'Blue/Yellow', amount: -30, description: 'Parama' },
-    { name: 'Wolt EE', amount: -7.5, description: 'Food service' },
-    { name: 'Jonas Jonaitis', amount: 50, description: 'Skola' },
-    { name: 'Bolt food', amount: -7.5, description: 'Food service & delivery' },
-  ];
+  payments: Payment[];
 
-  constructor() { }
+  constructor(private paymentsService: PaymentsService) {
+    this.payments = this.paymentsService.getPayments();
+  }
 
   ngOnInit(): void {
   }
