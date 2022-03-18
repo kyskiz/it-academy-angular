@@ -1,0 +1,15 @@
+<h2>{{ header }}</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dolores ducimus error facere id, incidunt inventore ipsa ipsum maxime necessitatibus odit porro quae rerum sapiente vero? Beatae numquam perferendis quisquam?</p>
+
+
+<hr>
+
+<app-child [text]="'Cia yra mano tekstas'"
+           (petras)="handleChildClick($event)"
+></app-child>
+
+<app-child [text]="'Cia yra kito child tekstas'"></app-child>
+
+<app-child [text]="header"></app-child>
+
+<app-child text="header"></app-child>
