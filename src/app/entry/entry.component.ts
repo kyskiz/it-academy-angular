@@ -33,7 +33,7 @@ export class EntryComponent implements OnInit, OnChanges, AfterViewInit, OnDestr
   }
 
   handleClick() {
-    this.onClick.emit(this.entry?.text)
+    this.onClick.emit(this.entry?.text);
   }
 
   getRandomText() {
