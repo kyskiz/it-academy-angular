@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 appHandleClick>Container component</h2>
+  <h2 appHandleClick>{{ 'Container component' | uppercase }}</h2>
 
   <ng-container *ngFor="let payment of payments">
     <app-payment *ngIf="payment.amount > 0"
@@ -15,8 +15,9 @@
 
   <hr>
 
-  <app-payment *ngFor="let payment of payments | sortPayments: 'name'"
+  <app-payment *ngFor="let payment of payments | sortPayments: 'amount'"
                [payment]="payment"
                (onClick)="handlePaymentClick($event, payment)"></app-payment>
 
+  <div appBackgroundColor [backgroundColor]="'#f00'" [textColor]="'#fff'">divContent</div>
 </div>

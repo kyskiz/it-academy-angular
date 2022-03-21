@@ -4,8 +4,8 @@ import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
   selector: '[appBackgroundColor]'
 })
 export class BackgroundColorDirective {
-  @Input() backgroundColor: string;
-  @Input() textColor:  string;
+  @Input() backgroundColor: string = '';
+  @Input() textColor:  string = '';
 
   constructor(private _elemRef: ElementRef, private _renderer: Renderer2) {
 
