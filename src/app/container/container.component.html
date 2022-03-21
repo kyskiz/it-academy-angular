@@ -14,6 +14,16 @@
 
 <app-child text="header"></app-child>
 
-<app-entry [entry]="entryVariable"
-           (onClick)="handleEntryClick($event)"
-></app-entry>
+<div>
+  div text
+  <ng-container *ngIf="entryVariable.id > 0">
+    {{ entryVariable.text }}</ng-container>
+</div>
+
+<ng-container *ngFor="let enterIteration of entries">
+
+  <app-entry *ngIf="enterIteration.id >= 4"
+    [entry]="enterIteration"
+    (onClick)="handleEntryClick($event)"></app-entry>
+</ng-container>
+
