@@ -13,3 +13,7 @@
 <app-child [text]="header"></app-child>
 
 <app-child text="header"></app-child>
+
+<app-entry [entry]="entryVariable"
+           (onClick)="handleEntryClick($event)"
+></app-entry>
