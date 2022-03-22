@@ -4,15 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContainerComponent } from './container/container.component';
-import { ChildComponent } from './child/child.component';
-import { EntryComponent } from './entry/entry.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { ExpensesListComponent } from './expenses-list/expenses-list.component';
+import { ExpenseOverviewComponent } from './expense-overview/expense-overview.component';
+import { ExpenseDetailsComponent } from './expense-details/expense-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
-    ChildComponent,
-    EntryComponent,
+    HeaderComponent,
+    HomeComponent,
+    ExpensesListComponent,
+    ExpenseOverviewComponent,
+    ExpenseDetailsComponent
   ],
   imports: [
     BrowserModule,

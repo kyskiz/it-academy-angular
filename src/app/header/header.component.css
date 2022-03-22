@@ -1,0 +1,19 @@
+.header {
+  background-color: tomato;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  flex: 1;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+}

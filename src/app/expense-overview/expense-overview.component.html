@@ -1,0 +1,4 @@
+<div *ngIf="expense" (click)="onExpenseClick(expense)" class="card">
+  <h3>{{expense.name}}</h3>
+  <p>amount: {{expense.amount}}</p>
+</div>

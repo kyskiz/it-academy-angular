@@ -1,0 +1,4 @@
+<h2>Expenses:</h2>
+<div *ngFor="let expense of expenses">
+  <app-expense-overview [expense]="expense" (onClickGetExpenseId)="goToExpense($event)"></app-expense-overview>
+</div>
