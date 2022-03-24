@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ExpenseFormComponent } from './expense-form.component';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ExpenseFormComponent', () => {
   let component: ExpenseFormComponent;
@@ -16,7 +17,8 @@ describe('ExpenseFormComponent', () => {
       providers: [
         { provide: HttpClient, useFactory: () => {} }
       ],
-      declarations: [ ExpenseFormComponent ]
+      declarations: [ ExpenseFormComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
   });
