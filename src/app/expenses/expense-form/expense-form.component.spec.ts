@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExpenseFormComponent } from './expense-form.component';
+import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 describe('ExpenseFormComponent', () => {
   let component: ExpenseFormComponent;
@@ -8,6 +10,12 @@ describe('ExpenseFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        FormsModule,
+      ],
+      providers: [
+        { provide: HttpClient, useFactory: () => {} }
+      ],
       declarations: [ ExpenseFormComponent ]
     })
     .compileComponents();
