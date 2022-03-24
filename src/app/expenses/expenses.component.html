@@ -1,0 +1,23 @@
+<h3>Add expense</h3>
+
+<app-expense-form (expenseUpdated)="loadExpenses()"></app-expense-form>
+
+<h3 class="mt-5">Expenses list</h3>
+<table class="table mt-3">
+  <tbody>
+    <tr *ngFor="let expense of expensesList$ | async">
+      <td>
+        <a routerLink="/expense/{{ expense.id }}">{{ expense.name }}</a>
+      </td>
+      <td>{{ expense.date | date }}</td>
+      <td>&euro;{{ expense.amount }}</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>&euro;{{ totalAmount }}</td>
+    </tr>
+  </tfoot>
+</table>
