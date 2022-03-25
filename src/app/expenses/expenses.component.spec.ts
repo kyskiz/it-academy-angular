@@ -1,15 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExpensesComponent } from './expenses.component';
-import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { ExpenseFormComponent } from './expense-form/expense-form.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ExpensesService } from '../services/expenses.service';
 import { Observable, of } from 'rxjs';
 import { Expense } from '../shared/expense';
 
-describe('ExpensesComponent', () => {
+fdescribe('ExpensesComponent', () => {
   let component: ExpensesComponent;
   let fixture: ComponentFixture<ExpensesComponent>;
   let expenseServiceMock = {
@@ -32,7 +30,6 @@ describe('ExpensesComponent', () => {
         FormsModule,
       ],
       providers: [
-        { provide: HttpClient, useFactory: () => {} },
         { provide: ExpensesService, useFactory: () => expenseServiceMock }
       ],
       declarations: [ ExpensesComponent ],
@@ -50,4 +47,18 @@ describe('ExpensesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('ngOnInit', () => {
+    beforeEach(() => {
+      spyOn(component, 'loadExpenses');
+      component.ngOnInit();
+    });
+
+    it('should trigger loadExpenses', () => {
+      expect(component.loadExpenses).toHaveBeenCalled();
+    });
+
+
+  });
+
 });
