@@ -6,13 +6,14 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ExpensesService } from '../services/expenses.service';
 import { Observable, of } from 'rxjs';
 import { Expense } from '../shared/expense';
+import { expensesList } from '../shared/DATA';
 
-fdescribe('ExpensesComponent', () => {
+describe('ExpensesComponent', () => {
   let component: ExpensesComponent;
   let fixture: ComponentFixture<ExpensesComponent>;
   let expenseServiceMock = {
     loadExpenses(): Observable<Expense[]> {
-      return of([]);
+      return of([expensesList[0]]);
     },
 
     getExpense(id: string): Observable<Expense> {
@@ -59,6 +60,9 @@ fdescribe('ExpensesComponent', () => {
     });
 
 
+    it('should calculate totalAmount', () => {
+      expect(component.totalAmount).toEqual(20.05);
+    });
   });
 
 });
