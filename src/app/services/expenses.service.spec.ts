@@ -39,15 +39,15 @@ describe('ExpensesService', () => {
   });
 
   describe('loadExpenses', () => {
+    beforeEach(() => {});
 
-    it('should call \'/api/expenses\' with get request', () => {
+    it(`should call '/api/expenses' with get request`, () => {
       service.loadExpenses();
       expect(httpClientMock.get).toHaveBeenCalledWith('/api/expenses');
     });
 
     it('should return observable of Expense array', (done) => {
       const responseObs = service.loadExpenses();
-
       responseObs.subscribe((response) => {
         expect(response).toBeTruthy();
         expect(response.length).toBeDefined();
@@ -56,6 +56,8 @@ describe('ExpensesService', () => {
       });
 
     });
+
+    afterEach(() => {});
   });
 
   describe('getExpense', () => {
